@@ -71,3 +71,4 @@ git -c user.name="adolfoaraya-dev" -c user.email="araya.info@gmail.com" commit -
 git remote set-url origin https://github.com/adolfoaraya-dev/app-geo.git
 
 git -c credential.helper= push origin main
+
