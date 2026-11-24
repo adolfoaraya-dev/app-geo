@@ -1,0 +1,17 @@
+.home {
+  padding: 24px;
+  font-family: Arial, sans-serif;
+}
+
+.tracking {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+button {
+  padding: 14px;
+  font-size: 16px;
+  cursor: pointer;
+}

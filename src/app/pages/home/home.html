@@ -1,0 +1,44 @@
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="card shadow-sm">
+        <div class="card-body text-center p-4">
+          <h3 class="card-title mb-4">Seguimiento GPS</h3>
+
+          <div class="mb-4">
+            <span
+              class="badge"
+              [class.bg-success]="geo.tracking()"
+              [class.bg-secondary]="!geo.tracking()">
+              {{ geo.tracking() ? 'Activo' : 'Detenido' }}
+            </span>
+          </div>
+
+          <div class="d-grid gap-2">
+            <button
+              class="btn btn-primary btn-lg"
+              (click)="iniciar()"
+              [disabled]="geo.tracking()">
+              Iniciar seguimiento
+            </button>
+
+            <button
+              class="btn btn-outline-danger"
+              (click)="detener()"
+              [disabled]="!geo.tracking()">
+              Detener seguimiento
+            </button>
+          </div>
+
+          <div class="mt-4 text-start">
+            <label class="form-label fw-semibold">Última ubicación</label>
+            <p class="text-muted mb-0">
+              {{ geo.lastLocation() || 'Sin ubicación registrada' }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
