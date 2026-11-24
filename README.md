@@ -72,3 +72,4 @@ git remote set-url origin https://github.com/adolfoaraya-dev/app-geo.git
 
 git -c credential.helper= push origin main
 
+git -c credential.helper= -c http.extraheader="AUTHORIZATION: basic $([Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes('adolfoaraya-dev:PEGAR_TOKEN_AQUI')))" push -u origin main
