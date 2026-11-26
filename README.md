@@ -57,6 +57,10 @@ sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
 ## COMPILAR ANDROID
 
 ```powershell
+$env:ANDROID_HOME = "C:\Android\Sdk"
+$env:ANDROID_SDK_ROOT = "C:\Android\Sdk"
+$env:PATH += ";C:\Android\Sdk\cmdline-tools\latest\bin;C:\Android\Sdk\platform-tools"
+
 npm run build
 npx cap sync android
 .\android\gradlew.bat -p android assembleDebug
