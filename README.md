@@ -1,13 +1,13 @@
-# CONFIGURACIÓN DEL ENTORNO ANDROID
+### CONFIGURACIÓN DEL ENTORNO ANDROID
 
-## NODE.JS
+#### NODE.JS
 ```powershell
 nvm install 22.23.5
 nvm use 22.23.5
 node -v
 ```
 
-## JAVA SDK
+  JAVA SDK
 ```powershell
 winget install EclipseAdoptium.Temurin.21.JDK
 ```
@@ -18,7 +18,7 @@ jabba install 21.0.0-temurin=zip+https://api.adoptium.net/v3/binary/latest/21/ga
 jabba use 21.0.0-temurin
 ```
 
-## ANDROID SDK
+  ANDROID SDK
 
 ```powershell
 $Sdk = "C:\Android\Sdk"
@@ -36,7 +36,7 @@ Expand-Archive "$Temp\tools.zip" -DestinationPath $Temp -Force
 Move-Item "$Temp\cmdline-tools" "$Sdk\cmdline-tools\latest" -Force
 ```
 
-## VARIABLES DE ANDROID SDK
+#### VARIABLES DE ANDROID SDK
 
 ```powershell
 $env:ANDROID_HOME = "C:\Android\Sdk"
@@ -48,13 +48,13 @@ sdkmanager --version
 
 **IMPORTANTE:** Reiniciar la IDE de Visual Studio para que reconozca los cambios en las variables de entorno.
 
-## HERRAMIENTAS PARA COMPILAR ANDROID
+#### HERRAMIENTAS PARA COMPILAR ANDROID
 
 ```powershell
 sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
 ```
 
-## COMPILAR ANDROID
+#### COMPILAR ANDROID
 
 ```powershell
 $env:ANDROID_HOME = "C:\Android\Sdk"
@@ -72,11 +72,11 @@ Comando completo en una línea:
 npm run build; npx cap sync android; .\android\gradlew.bat -p android assembleDebug
 ```
 
-## LICENSE VALIDATION FAILURE
+#### LICENSE VALIDATION FAILURE
 
 BGGeo es completamente funcional en compilaciones DEBUG sin licencia, para permitir probarlo antes de comprar.
 
-## GIT
+#### GIT
 
 Decodificar token hexadecimal: https://www.convertstring.com/es/EncodeDecode/HexEncode
 
@@ -98,6 +98,3 @@ git add .
 git commit -m "doc"
 git push -u origin main
 ```
-
-
-Reemplazar `PEGAR_TOKEN_AQUI` por el Personal Access Token de GitHub.
