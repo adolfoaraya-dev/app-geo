@@ -79,7 +79,7 @@ Decodificar token hexadecimal: https://www.convertstring.com/es/EncodeDecode/Hex
 ```powershell
 $hex="6769746875625F7061745F3131424F4D4C594749305076354433557653317235525F4F625258714979694C6C37566D7770366173573030473843573534344375576869577161347A69376B7277524554354744535A68516B5243667263"; 
 
-[Text.Encoding]::UTF8.GetString(($hex -split '(..)' | Where-Object {$_} | ForEach-Object {[Convert]::ToByte($_,16)}))
+$token=[Text.Encoding]::UTF8.GetString(($hex -split '(..)' | Where-Object {$_} | ForEach-Object {[Convert]::ToByte($_,16)}))
 
 git add .
 
@@ -89,7 +89,7 @@ git remote set-url origin https://github.com/adolfoaraya-dev/app-geo.git
 
 git -c credential.helper= push origin main
 
-git -c credential.helper= -c http.extraheader="AUTHORIZATION: basic $([Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes('adolfoaraya-dev:PEGAR_TOKEN_AQUI')))" push -u origin main
+git -c credential.helper= -c http.extraheader="AUTHORIZATION: basic $([Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes('adolfoaraya-dev:' + $token)))" push -u origin main
 ```
 
 Reemplazar `PEGAR_TOKEN_AQUI` por el Personal Access Token de GitHub.
