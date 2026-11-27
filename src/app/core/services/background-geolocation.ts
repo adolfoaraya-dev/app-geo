@@ -44,14 +44,15 @@ export class BackgroundGeolocationService {
       geolocation: {
         desiredAccuracy: BackgroundGeolocation.DesiredAccuracy.High,
         distanceFilter: 0,
-        locationUpdateInterval: 20 * 1000,
-        fastestLocationUpdateInterval: 20 * 1000,
+        locationUpdateInterval: 10000,
+        fastestLocationUpdateInterval: 10000,
         allowIdenticalLocations: true,
         locationAuthorizationRequest: 'Always' as const,
         enableTimestampMeta: true
       },
       activity: {
-        disableStopDetection: true
+        disableStopDetection: true,
+        activityRecognitionInterval: 10000
       },
       app: {
         stopOnTerminate: false,

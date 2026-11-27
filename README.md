@@ -72,6 +72,11 @@ Comando completo en una línea:
 npm run build; npx cap sync android; .\android\gradlew.bat -p android assembleDebug
 ```
 
+comando parametrizado en package.json
+```powershell
+npm run apk:build
+```
+
 #### LICENSE VALIDATION FAILURE
 
 BGGeo es completamente funcional en compilaciones DEBUG sin licencia, para permitir probarlo antes de comprar.
